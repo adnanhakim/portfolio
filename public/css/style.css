@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap');
 
+:root {
+    --accent-colour: lightcoral;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -238,11 +242,31 @@ section {
     padding: 5% 12%;
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.home-name {
+.home-container h1 {
+    font-size: 5em;
+}
+
+.home-container span {
+    color: lightcoral;
+}
+
+.line {
+    width: 75%;
+    height: 3px;
+    background: black;
+}
+
+.home-container h2 {
+    font-size: 3em;
+}
+
+/* .home-name {
     position: relative;
 }
 
@@ -288,6 +312,46 @@ section {
     left: 50%;
     transform: translate(-40%, -50%);
     width: 400px;
+} */
+
+/* .social-media-links {
+    display: flex;
+}
+
+.social-media-links li {
+    list-style: none;
+}
+
+.social-media-links img {
+    width: 40px;
+    height: 40px;
+} */
+
+.home-links {
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+    padding: 15px 0px;
+}
+
+.home-links li {
+    list-style: none;
+}
+
+#facebook:hover,
+#github:hover {
+    fill: var(--accent-colour);
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+}
+
+#instagram:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+}
+
+#instagram:hover path {
+    fill: var(--accent-colour);
 }
 
 @media screen and (max-width: 768px) {
@@ -301,32 +365,16 @@ section {
         grid-template-columns: 100%;
     }
 
-    .home-name-items {
-        width: 400px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    .home-container h1 {
+        font-size: 40px;
     }
 
-    .home-name {
-        grid-column: 1;
+    .home-container h2 {
+        font-size: 26px;
     }
 
-    .home-name h1 {
-        font-size: 60px;
-    }
-
-    .home-name .social-media-links {
-        width: 30%;
-    }
-
-    .home-image {
-        grid-column: 1;
-        grid-row: 1/3;
-    }
-
-    .home-image img {
-        transform: translate(-50%, -50%);
+    .home-links {
+        width: 80%;
     }
 }
 
@@ -478,8 +526,9 @@ section {
 
 .project-text {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     padding: 8% 0%;
-    align-items: center;
     z-index: 2;
 }
 
@@ -502,12 +551,50 @@ section {
     padding: 0% 0% 0% 5%;
 }
 
-.links {
-    float: right;
+.project-link-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding: 5% 0% 0% 0%;
 }
 
-.links img {
+.project-link-buttons button {
+    padding: 10px 25px;
+    width: 46%;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(221, 214, 243);
+    background: linear-gradient(
+        45deg,
+        rgba(221, 214, 243, 1) 0%,
+        rgba(250, 172, 168, 1) 60%
+    );
+    border: 0;
+    outline: 0 none;
+    border-radius: 15px;
     cursor: pointer;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .odd-text {
+        padding: 0%;
+    }
+
+    .even-text {
+        padding: 0%;
+    }
+
+    .project-link-buttons {
+        flex-direction: column;
+    }
+
+    .project-link-buttons button {
+        width: 100%;
+    }
+
+    .project-link-buttons button:first-child {
+        margin-bottom: 16px;
+    }
 }
 
 .project-circle-1 {
@@ -664,12 +751,78 @@ section {
     background: linear-gradient(45deg, #232526 0%, #414345 60%);
 }
 
-.footer {
+@media screen and (max-width: 768px) {
+    .contact-container {
+        padding: 3% 7%;
+    }
+
+    .form {
+        width: 90%;
+    }
+
+    .form input,
+    .form textarea,
+    .form button {
+        padding: 3% 3%;
+    }
+
+    .form button {
+        width: 100%;
+    }
+}
+
+footer {
     height: 17vh;
+    overflow: hidden;
+    background: lightblue;
     background: linear-gradient(45deg, #232526 0%, #414345 60%);
 }
 
 .footer-container {
+    height: 100%;
     padding: 3% 12%;
     color: rgb(236, 236, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.footer-links li {
+    list-style: none;
+}
+
+#footer-facebook:hover,
+#footer-github:hover {
+    fill: var(--accent-colour);
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+}
+
+#footer-instagram:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+}
+
+#footer-instagram:hover path {
+    fill: var(--accent-colour);
+}
+
+@media screen and (max-width: 768px) {
+    .footer-links {
+        width: 100%;
+    }
+
+    #footer-facebook,
+    #footer-instagram,
+    #footer-github {
+        width: 40px;
+        height: 40px;
+    }
 }
