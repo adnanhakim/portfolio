@@ -41,6 +41,12 @@ body {
     text-decoration: underline;
 }
 
+button,
+a {
+    outline: none;
+    cursor: pointer;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -150,6 +156,10 @@ nav ul li a {
 
 /* Media Queries for hamburger */
 @media screen and (max-width: 768px) {
+    header {
+        padding: 0% 7%;
+    }
+
     nav ul {
         position: absolute;
         left: 0px;
@@ -259,7 +269,8 @@ section {
 }
 
 .home-container h1 {
-    font-size: 5em;
+    font-size: 3em;
+    text-align: center;
 }
 
 .home-container span {
@@ -277,10 +288,6 @@ section {
     width: 75%;
     height: 3px;
     background: black;
-}
-
-.home-container h2 {
-    font-size: 3em;
 }
 
 /* .home-name {
@@ -383,11 +390,7 @@ section {
     }
 
     .home-container h1 {
-        font-size: 40px;
-    }
-
-    .home-container h2 {
-        font-size: 26px;
+        font-size: 2em;
     }
 
     .home-links {
@@ -436,7 +439,7 @@ section {
 }
 
 .about-image {
-    padding: 0px 5%;
+    padding: 0% 5%;
     z-index: 2;
 }
 
@@ -448,7 +451,7 @@ section {
 .about-text {
     z-index: 2;
     text-align: justify;
-    padding: 0px 5%;
+    padding: 0% 5%;
     font-size: 1.2em;
 }
 
@@ -484,7 +487,12 @@ section {
     .about-container {
         display: flex;
         flex-direction: column;
-        padding: 5% 7%;
+        padding: 7% 7%;
+    }
+
+    .about-image,
+    .about-text {
+        padding: 0%;
     }
 
     .about-text h1 {
@@ -494,9 +502,9 @@ section {
     }
 
     .about-circle {
-        width: 600px;
-        height: 600px;
-        transform: translate(-20%, 125%);
+        width: 500px;
+        height: 500px;
+        transform: translate(-20%, 120%);
     }
 }
 
@@ -682,6 +690,10 @@ section {
         height: auto;
     }
 
+    .project-container {
+        padding: 7% 7%;
+    }
+
     .project-odd-container {
         display: flex;
         flex-direction: column;
@@ -701,19 +713,21 @@ section {
     }
 
     .project-circle-1 {
-        width: 600px;
-        height: 600px;
-        transform: translate(10%, 390%);
+        width: 500px;
+        height: 500px;
+        transform: translate(20%, 410%);
     }
 
     .project-circle-2 {
-        transform: translate(-10%, 570%);
+        width: 500px;
+        height: 500px;
+        transform: translate(-20%, 680%);
     }
 
     .project-circle-3 {
-        width: 600px;
-        height: 600px;
-        transform: translate(10%, 810%);
+        width: 500px;
+        height: 500px;
+        transform: translate(20%, 960%);
     }
 }
 
@@ -785,11 +799,11 @@ section {
 
 @media screen and (max-width: 768px) {
     .contact-container {
-        padding: 3% 7%;
+        padding: 7% 7%;
     }
 
     .form {
-        width: 90%;
+        width: 100%;
     }
 
     .form input,
