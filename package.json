@@ -1,11 +1,15 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "Responsive Portfolio",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Adnan Hakim",
-  "license": "ISC"
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "Responsive Portfolio",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "gh-pages -d public"
+    },
+    "author": "Adnan Hakim",
+    "license": "ISC",
+    "homepage": "https://adnanhakim.github.io/portfolio",
+    "dependencies": {
+        "gh-pages": "^2.2.0"
+    }
 }
