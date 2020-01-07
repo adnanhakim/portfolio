@@ -8,7 +8,7 @@
     },
     "author": "Adnan Hakim",
     "license": "ISC",
-    "homepage": "https://adnanhakim.github.io/portfolio",
+    "homepage": "https://adnanhakim.github.io",
     "dependencies": {
         "gh-pages": "^2.2.0"
     }
