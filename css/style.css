@@ -529,7 +529,7 @@ section {
     grid-template-columns: 40% 60%;
 }
 
-.header {
+.project-header {
     font-size: 2em;
 }
 
@@ -551,8 +551,8 @@ section {
 
 .project-text {
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     padding: 8% 0%;
     z-index: 2;
 }
@@ -566,6 +566,7 @@ section {
 .text {
     font-size: 1.2em;
     text-align: justify;
+    height: 100%;
 }
 
 .odd-text {
@@ -712,6 +713,12 @@ section {
         flex-direction: column;
     }
 
+    .project-header {
+        font-size: 1.5em;
+        text-align: center;
+        margin: 0px 0px 16px 0px;
+    }
+
     .project-circle-1 {
         width: 500px;
         height: 500px;
@@ -751,6 +758,10 @@ section {
 .contact-container .form-container {
     display: flex;
     justify-content: center;
+}
+
+.contact-header {
+    font-size: 2em;
 }
 
 .form {
@@ -800,6 +811,10 @@ section {
 @media screen and (max-width: 768px) {
     .contact-container {
         padding: 7% 7%;
+    }
+
+    .contact-header {
+        font-size: 1.5em;
     }
 
     .form {
