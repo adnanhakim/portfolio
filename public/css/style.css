@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap');
 
 :root {
-    --accent-colour: lightcoral;
+    --white: #ffffff;
+    --off-white: #f2f2f2;
+    --dark: #222831;
+    --main-gradient-1: rgba(221, 214, 243, 1);
+    --main-gradient-2: rgba(250, 172, 168, 1);
+    --accent-gradient-1: rgba(218, 147, 93, 1);
+    --accent-gradient-2: rgba(137, 86, 67, 1);
 }
 
 html {
@@ -15,7 +21,7 @@ html {
 }
 
 body {
-    background: #ffffff;
+    background: var(--white);
     overflow-x: hidden;
     font-family: 'Poppins';
 }
@@ -87,7 +93,11 @@ nav ul li a {
     position: absolute;
     z-index: -2;
     height: 4px;
-    background: linear-gradient(45deg, #232526 0%, #414345 60%);
+    background: linear-gradient(
+        45deg,
+        var(--accent-gradient-1) 0%,
+        var(--accent-gradient-2) 60%
+    );
     transition: all 0.5s ease;
 }
 
@@ -207,11 +217,11 @@ nav ul li a {
     width: 1000px;
     height: 1000px;
     border-radius: 50%;
-    background: rgb(221, 214, 243);
+    background: var(--main-gradient-1);
     background: linear-gradient(
         45deg,
-        rgba(221, 214, 243, 1) 0%,
-        rgba(250, 172, 168, 1) 60%
+        var(--main-gradient-1) 0%,
+        var(--main-gradient-2) 60%
     );
     transform: translate(40%, -40%);
     opacity: 0.7;
@@ -254,6 +264,13 @@ section {
 
 .home-container span {
     color: lightcoral;
+    background: -webkit-linear-gradient(
+        45deg,
+        var(--accent-gradient-1),
+        var(--accent-gradient-2)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .line {
@@ -340,7 +357,7 @@ section {
 
 #facebook:hover,
 #github:hover {
-    fill: var(--accent-colour);
+    fill: var(--accent-gradient-2);
     transform: scale(1.2);
     transition: all 0.2s ease;
 }
@@ -351,7 +368,7 @@ section {
 }
 
 #instagram:hover path {
-    fill: var(--accent-colour);
+    fill: var(--accent-gradient-2);
 }
 
 @media screen and (max-width: 768px) {
@@ -408,7 +425,7 @@ section {
 
 /* About Section */
 .about {
-    background: #f2f2f2;
+    background: var(--off-white);
     height: 92vh;
 }
 
@@ -449,8 +466,8 @@ section {
     background: rgb(221, 214, 243);
     background: linear-gradient(
         45deg,
-        rgba(221, 214, 243, 1) 0%,
-        rgba(250, 172, 168, 1) 60%
+        var(--main-gradient-1) 0%,
+        var(--main-gradient-2) 60%
     );
     transform: translate(-20%, 90%);
     opacity: 0.7;
@@ -495,12 +512,12 @@ section {
 }
 
 .project-odd-container {
-    background: #ffffff;
+    background: var(--white);
     grid-template-columns: 60% 40%;
 }
 
 .project-even-container {
-    background: #f2f2f2;
+    background: var(--off-white);
     grid-template-columns: 40% 60%;
 }
 
@@ -558,15 +575,20 @@ section {
     padding: 5% 0% 0% 0%;
 }
 
+.project-link-buttons a {
+    width: 46%;
+    cursor: pointer;
+}
+
 .project-link-buttons button {
     padding: 10px 25px;
-    width: 46%;
+    width: 100%;
     font-family: 'Poppins', sans-serif;
     background: rgb(221, 214, 243);
     background: linear-gradient(
         45deg,
-        rgba(221, 214, 243, 1) 0%,
-        rgba(250, 172, 168, 1) 60%
+        var(--accent-gradient-1) 0%,
+        var(--accent-gradient-2) 60%
     );
     border: 0;
     outline: 0 none;
@@ -588,12 +610,12 @@ section {
         flex-direction: column;
     }
 
-    .project-link-buttons button {
+    .project-link-buttons a {
         width: 100%;
     }
 
-    .project-link-buttons button:first-child {
-        margin-bottom: 16px;
+    .project-link-buttons a:nth-child(2) {
+        margin-top: 16px;
     }
 }
 
@@ -607,8 +629,8 @@ section {
     background: rgb(221, 214, 243);
     background: linear-gradient(
         45deg,
-        rgba(221, 214, 243, 1) 0%,
-        rgba(250, 172, 168, 1) 60%
+        var(--main-gradient-1) 0%,
+        var(--main-gradient-2) 60%
     );
     transform: translate(20%, 250%);
     opacity: 0.7;
@@ -626,8 +648,8 @@ section {
     background: rgb(221, 214, 243);
     background: linear-gradient(
         45deg,
-        rgba(221, 214, 243, 1) 0%,
-        rgba(250, 172, 168, 1) 60%
+        var(--main-gradient-1) 0%,
+        var(--main-gradient-2) 60%
     );
     transform: translate(-20%, 420%);
     opacity: 0.7;
@@ -645,8 +667,8 @@ section {
     background: rgb(221, 214, 243);
     background: linear-gradient(
         45deg,
-        rgba(221, 214, 243, 1) 0%,
-        rgba(250, 172, 168, 1) 60%
+        var(--main-gradient-1) 0%,
+        var(--main-gradient-2) 60%
     );
     transform: translate(20%, 490%);
     opacity: 0.7;
@@ -697,7 +719,7 @@ section {
 
 .contact {
     height: 75vh;
-    background: #f2f2f2;
+    background: var(--off-white);
 }
 
 .contact-container {
@@ -733,7 +755,7 @@ section {
     z-index: 2;
     margin-top: 10px;
     padding: 1% 2%;
-    border: 2px solid #232526;
+    border: 2px solid var(--dark);
     border-radius: 10px;
 }
 
@@ -742,13 +764,23 @@ section {
     align-self: flex-end;
     text-transform: uppercase;
     background: rgb(221, 214, 243);
-    background: linear-gradient(45deg, #414345 0%, #232526 60%);
+    background: linear-gradient(
+        45deg,
+        var(--accent-gradient-1) 0%,
+        var(--accent-gradient-2) 60%
+    );
+    background: var(--dark);
     color: rgb(236, 236, 236);
     cursor: pointer;
+    border: 0;
 }
 
 .form button:hover {
-    background: linear-gradient(45deg, #232526 0%, #414345 60%);
+    background: linear-gradient(
+        45deg,
+        var(--accent-gradient-2) 0%,
+        var(--accent-gradient-1) 60%
+    );
 }
 
 @media screen and (max-width: 768px) {
@@ -774,8 +806,7 @@ section {
 footer {
     height: 17vh;
     overflow: hidden;
-    background: lightblue;
-    background: linear-gradient(45deg, #232526 0%, #414345 60%);
+    background: var(--dark);
 }
 
 .footer-container {
@@ -800,7 +831,7 @@ footer {
 
 #footer-facebook:hover,
 #footer-github:hover {
-    fill: var(--accent-colour);
+    fill: var(--accent-gradient-1);
     transform: scale(1.2);
     transition: all 0.2s ease;
 }
@@ -811,7 +842,7 @@ footer {
 }
 
 #footer-instagram:hover path {
-    fill: var(--accent-colour);
+    fill: var(--accent-gradient-1);
 }
 
 @media screen and (max-width: 768px) {
