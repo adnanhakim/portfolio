@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Poppins&display=swap');
 
 :root {
     --white: #ffffff;
@@ -449,6 +449,7 @@ section {
 }
 
 .about-text {
+    font-family: 'Nunito Sans', sans-serif;
     z-index: 2;
     text-align: justify;
     padding: 0% 5%;
@@ -457,6 +458,7 @@ section {
 
 .about-text h1 {
     font-size: 2em;
+    font-family: 'Poppins', sans-serif;
 }
 
 .about-circle {
@@ -514,7 +516,7 @@ section {
 
 .project-container {
     height: 100%;
-    padding: 5% 12%;
+    padding: 3% 12%;
     position: relative;
     display: grid;
 }
@@ -531,6 +533,7 @@ section {
 
 .project-header {
     font-size: 2em;
+    font-family: 'Poppins', sans-serif;
 }
 
 .helper {
@@ -566,7 +569,8 @@ section {
 .text {
     font-size: 1.2em;
     text-align: justify;
-    height: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    width: 100%;
 }
 
 .odd-text {
@@ -641,8 +645,8 @@ section {
         var(--main-gradient-1) 0%,
         var(--main-gradient-2) 60%
     );
-    transform: translate(20%, 250%);
     opacity: 0.7;
+    transform: translate(15%, 250%);
     overflow: hidden;
     z-index: 1;
 }
