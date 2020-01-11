@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Poppins|Muli&display=swap');
 
 :root {
     --white: #ffffff;
     --off-white: #f2f2f2;
-    --dark: #222831;
+    /* --dark: #222831; */
+    --dark: rgb(51, 51, 51);
+    --light-text: rgb(74, 74, 74);
     --main-gradient-1: rgba(221, 214, 243, 1);
     --main-gradient-2: rgba(250, 172, 168, 1);
     --accent-gradient-1: rgba(218, 147, 93, 1);
@@ -23,7 +25,7 @@ html {
 body {
     background: var(--white);
     overflow-x: hidden;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 .space {
@@ -37,18 +39,15 @@ body {
     bottom: 0;
 }
 
-.underline {
-    text-decoration: underline;
-}
-
 button,
 a {
     outline: none;
     cursor: pointer;
 }
 
+/* Nav bar */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     display: flex;
@@ -95,6 +94,7 @@ nav ul li a {
     transition: all 0.3s ease 0s;
 }
 
+/* Underline */
 .bubble {
     position: absolute;
     z-index: -2;
@@ -106,32 +106,6 @@ nav ul li a {
     );
     transition: all 0.5s ease;
 }
-
-/* .nav ul > li > a > span {
-    width: 50px;
-    height: 3px;
-    background: #fdefcf;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.nav ul > li > a > span::before {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #fdefcf;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.nav ul > li:hover > a > span::before {
-    width: 50%;
-    animation: bounce 1.5s 0.3s ease-out infinite;
-} */
 
 .hamburger {
     width: 25px;
@@ -153,8 +127,34 @@ nav ul li a {
 .hamburger div:last-child {
     margin-bottom: 0px;
 }
+.nav-active {
+    display: flex;
+}
 
-/* Media Queries for hamburger */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line-1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line-2 {
+    opacity: 0;
+}
+
+.toggle .line-3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Media Queries for nav bar */
 @media screen and (max-width: 768px) {
     header {
         padding: 0% 7%;
@@ -191,33 +191,6 @@ nav ul li a {
     .bubble {
         display: none;
     }
-}
-
-.nav-active {
-    display: flex;
-}
-
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-.toggle .line-1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line-2 {
-    opacity: 0;
-}
-
-.toggle .line-3 {
-    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 .main-circle {
@@ -590,6 +563,12 @@ section {
 
 .project-link-buttons a {
     width: 46%;
+    background: linear-gradient(
+        45deg,
+        var(--accent-gradient-1) 0%,
+        var(--accent-gradient-2) 60%
+    );
+    padding: 3px;
     cursor: pointer;
 }
 
@@ -597,17 +576,25 @@ section {
     padding: 10px 25px;
     width: 100%;
     font-family: 'Poppins', sans-serif;
-    background: rgb(221, 214, 243);
-    background: linear-gradient(
-        45deg,
-        var(--accent-gradient-1) 0%,
-        var(--accent-gradient-2) 60%
-    );
     border: 0;
     outline: 0 none;
-    border-radius: 15px;
     cursor: pointer;
-    color: white;
+    text-transform: uppercase;
+    color: var(--accent-gradient-2);
+}
+
+.light-button {
+    background: var(--white);
+}
+
+.dark-button {
+    background: var(--off-white);
+}
+
+.project-link-buttons button:hover {
+    background: transparent;
+    color: var(--white);
+    transition: all 0.5s ease;
 }
 
 @media screen and (max-width: 768px) {
@@ -847,6 +834,7 @@ footer {
     padding: 3% 12%;
     color: rgb(236, 236, 236);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -856,6 +844,7 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     width: 50%;
+    margin-bottom: 1vh;
 }
 
 .footer-links li {
