@@ -192,6 +192,11 @@ nav ul li a {
     .bubble {
         display: none;
     }
+
+    /* Hide all circles in mobile view */
+    .circle {
+        display: none;
+    }
 }
 
 .main-circle {
