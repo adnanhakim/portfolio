@@ -56,6 +56,7 @@ let observer = new IntersectionObserver(navCheck, options);
 
 function navCheck(entries) {
     if (window.innerWidth > 768) {
+        bubble.style.display = 'block';
         entries.forEach(entry => {
             const className = entry.target.className;
             const activeAnchor = document.querySelector(
@@ -73,8 +74,14 @@ function navCheck(entries) {
                 bubble.style.setProperty('left', `${directions.left}px`);
             }
         });
-    }
+    } else bubble.style.display = 'none';
 }
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        bubble.style.display = 'block';
+    } else bubble.style.display = 'none';
+});
 
 sections.forEach(section => {
     observer.observe(section);
